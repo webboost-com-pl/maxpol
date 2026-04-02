@@ -337,29 +337,31 @@
       pointer-events:none;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap:40px;
-      align-items:stretch;
-      min-height: calc(100vh - 140px);
-    }
+ .hero-grid{
+  display: block;
+  min-height: auto;
+}
 
-    .hero-left{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:32px 0;
-      position:relative;
-      z-index:2;
-    }
+  .hero-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:48px 0 24px;
+  position:relative;
+  z-index:2;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    .hero-kicker{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:24px;
-    }
+  .hero-kicker{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:24px;
+}
 
     .hero-chip{
       display:inline-flex;
@@ -378,13 +380,14 @@
       color:var(--ink);
     }
 
-    .hero-title{
-      font-size: clamp(2.9rem, 7vw, 6rem);
-      line-height:0.94;
-      letter-spacing:-0.06em;
-      max-width: 11ch;
-      margin-bottom:22px;
-    }
+.hero-title{
+  font-size: clamp(3rem, 7vw, 6.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+  max-width: 22ch;
+  margin: 0 auto 22px;
+  text-align: center;
+}
 
     .hero-title .accent{
       display:block;
@@ -394,26 +397,30 @@
       background-clip:text;
     }
 
-    .hero-desc{
-      max-width:700px;
-      font-size:1.08rem;
-      color:var(--muted);
-      margin-bottom:32px;
-    }
+ .hero-desc{
+  max-width: 820px;
+  font-size: 1.08rem;
+  color: var(--muted);
+  margin: 0 auto 32px;
+  text-align: center;
+}
 
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-bottom:38px;
-    }
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:38px;
+}
 
-    .hero-stats{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-      max-width:800px;
-    }
+   .hero-stats{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+  max-width:900px;
+  width:100%;
+  margin: 0 auto;
+}
 
     .stat-card{
       padding:20px 18px;
@@ -1810,13 +1817,13 @@
             <div class="hero-logo-grid">
               <div class="hero-logo-card">
                 <div class="logo-placeholder">
-                  <img src="logo-maxpol-maciej-jankowiak.png" alt="MAXPOL Maciej Jankowiak">
+                  <img src="logo-maxpol-maciej-jankowiak.png" alt="MAXPOL Maciej Jankowiak" style="scale: 1.5;">
                 </div>
                 <small>PPHU MAXPOL Maciej Jankowiak</small>
               </div>
               <div class="hero-logo-card">
                 <div class="logo-placeholder">
-                  <img src="logo-maxpol-sp-zoo.png" alt="MAXPOL Sp. z o.o.">
+                  <img src="logo-maxpol-sp-zoo.png" alt="MAXPOL Sp. z o.o." style="scale: 1.5;">
                 </div>
                 <small>MAXPOL Sp. z o.o.</small>
               </div>
@@ -2189,7 +2196,7 @@
         <div class="grid-4 applications-grid">
           <article class="card reveal">
             <div class="card-body">
-              <div class="card-icon">D</div>
+              <div class="card-icon"><img src="domek.png" alt="" style="border-radius: 20px; scale: 1.2;"></div>
               <h3>Domy i zabudowy prywatne</h3>
               <p>Rozwiązania dla budynków mieszkalnych, wejść, przeszkleń i nowoczesnych stref przydomowych.</p>
             </div>
@@ -2197,7 +2204,7 @@
 
           <article class="card reveal">
             <div class="card-body">
-              <div class="card-icon">T</div>
+              <div class="card-icon"><img src="taras.png" alt="" style="border-radius: 20px; scale: 1.2;"></div>
               <h3>Tarasy i ogrody</h3>
               <p>Balustrady, zadaszenia, ogrody zimowe i elementy poprawiające funkcjonalność stref zewnętrznych.</p>
             </div>
@@ -2205,7 +2212,7 @@
 
           <article class="card reveal">
             <div class="card-body">
-              <div class="card-icon">S</div>
+              <div class="card-icon"><img src="sklep.png" alt="" style="border-radius: 20px; scale: 1.2;"></div>
               <h3>Sklepy i lokale usługowe</h3>
               <p>Budowa i zabudowa przestrzeni handlowych, usługowych oraz elementów ekspozycyjnych i użytkowych.</p>
             </div>
@@ -2213,7 +2220,7 @@
 
           <article class="card reveal">
             <div class="card-body">
-              <div class="card-icon">I</div>
+              <div class="card-icon"><img src="hala.png" alt="" style="border-radius: 20px; scale: 1.2;"></div>
               <h3>Hale i inwestycje komercyjne</h3>
               <p>Konstrukcje dla obiektów o większej skali i dla projektów realizowanych w modelu biznesowym.</p>
             </div>
@@ -2423,15 +2430,17 @@ związane ze współpracą przy projektach dla klientów prywatnych i biznesowyc
             </div>
 
             <div class="card reference-card reveal">
-              <h3>Logotypy partnerów / inwestorów</h3>
+              <h3>Partnerzy / inwestorowie</h3>
           <p>
   Wybrane współprace i materiały referencyjne pokazują zakres działalności firmy oraz udział MAXPOL 
   w realizacjach dla sektora prywatnego, usługowego i komercyjnego.
 </p>
               <div class="logos-strip">
-                <div class="strip-item">Partner / inwestor</div>
-                <div class="strip-item">Partner / inwestor</div>
-                <div class="strip-item">Partner / inwestor</div>
+                <div class="strip-item"><img src="alusystem.jpg" alt="" height="80px" width="250px" style="border-radius: 10px; scale: 1.1;"></div>
+                <div class="strip-item"><img src="assaabloy.jpg" alt="" height="80px" width="250px" style="border-radius: 10px; scale: 1.1;"></div>
+                <div class="strip-item"><img src="record.jpg" alt="" height="80px" width="250px" style="border-radius: 10px; scale: 1.1;"></div>
+                <div class="strip-item"><img src="aliplast.jpg" alt="" height="80px" width="250px" style="border-radius: 10px; scale: 1.1;"></div>
+              </div>
               </div>
             </div>
           </div>
