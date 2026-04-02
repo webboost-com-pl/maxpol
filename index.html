@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAXPOL | Stolarka aluminiowa, stalowa i konstrukcje budowlane</title>
+  <meta name="description" content="MAXPOL to producent i wykonawca konstrukcji budowlanych, stolarki aluminiowej i stalowej. Firma działa od 1996 roku, realizując projekty dla klientów indywidualnych i biznesowych." />
+  <meta name="theme-color" content="#111315" />
+
+  <style>
+    :root{
+      --bg: #f3f4f5;
+      --bg-soft: #eceeef;
+      --surface: rgba(255,255,255,0.88);
+      --surface-strong: #ffffff;
+      --surface-dark: #181b1f;
+      --ink: #111315;
+      --muted: #5f6670;
+      --muted-2: #7a838f;
+      --line: rgba(17, 19, 21, 0.10);
+      --line-strong: rgba(17, 19, 21, 0.18);
+      --accent: #2e3338;
+      --accent-2: #6f7881;
+      --steel: #c9d0d7;
+      --graphite: #272d33;
+      --dark: #0f1215;
+      --red: #9c2a2a;
+      --green: #295b45;
+      --success: #2b5d46;
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --shadow-1: 0 10px 30px rgba(8, 10, 12, 0.06);
+      --shadow-2: 0 20px 60px rgba(8, 10, 12, 0.08);
+      --shadow-3: 0 30px 80px rgba(8, 10, 12, 0.12);
+      --max: 1320px;
+      --header-h: 86px;
+      --transition: 0.3s ease;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(160,170,180,0.18), transparent 22%),
+        radial-gradient(circle at 90% 20%, rgba(170,176,182,0.12), transparent 24%),
+        linear-gradient(180deg, #f7f8f9 0%, #eef1f3 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,
+    input,
+    textarea{
+      font:inherit;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .section{
+      padding: 108px 0;
+      position:relative;
+    }
+
+    .section.compact{
+      padding: 84px 0;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:0.82rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      background:rgba(255,255,255,0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      margin-bottom:18px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--graphite), var(--steel));
+      box-shadow:0 0 0 4px rgba(39,45,51,0.08);
+    }
+
+    .section-head{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap:32px;
+      align-items:end;
+      margin-bottom:44px;
+    }
+
+    .section-head h2{
+      font-size: clamp(2rem, 3vw, 3.5rem);
+      line-height:1.05;
+      letter-spacing:-0.04em;
+      max-width: 12ch;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      max-width:720px;
+      justify-self:end;
+    }
+
+    .reveal{
+      opacity:0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.in-view{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    header.site-header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      height:var(--header-h);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(246,248,249,0.78);
+      border-bottom:1px solid rgba(17,19,21,0.08);
+    }
+
+    .header-inner{
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand-wrap{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-divider{
+      width:1px;
+      height:42px;
+      background:var(--line);
+      flex:0 0 auto;
+    }
+
+    .logo-box{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-width:132px;
+      min-height:52px;
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,0.85);
+      box-shadow: var(--shadow-1);
+    }
+
+    .logo-box img{
+      max-height:28px;
+      width:auto;
+      object-fit:contain;
+    }
+
+    nav.main-nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    nav.main-nav a{
+      padding:10px 14px;
+      color:var(--muted);
+      font-size:0.96rem;
+      border-radius:12px;
+      transition: var(--transition);
+    }
+
+    nav.main-nav a:hover{
+      color:var(--ink);
+      background:rgba(255,255,255,0.72);
+    }
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .menu-toggle{
+      display:none;
+      width:48px;
+      height:48px;
+      border:none;
+      border-radius:14px;
+      background: #ffffff;
+      box-shadow: var(--shadow-1);
+      cursor:pointer;
+      position:relative;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after{
+      content:"";
+      position:absolute;
+      left:12px;
+      right:12px;
+      height:2px;
+      background:#111315;
+      border-radius:2px;
+      transition:0.25s ease;
+    }
+
+    .menu-toggle span{ top:23px; }
+    .menu-toggle::before{ top:16px; }
+    .menu-toggle::after{ top:30px; }
+
+    .menu-toggle.active span{ opacity:0; }
+    .menu-toggle.active::before{ transform:translateY(7px) rotate(45deg); }
+    .menu-toggle.active::after{ transform:translateY(-7px) rotate(-45deg); }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:16px;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition: var(--transition);
+      font-weight:600;
+      letter-spacing:-0.02em;
+      white-space:nowrap;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, #171a1d, #2a3036);
+      color:#fff;
+      box-shadow: 0 18px 40px rgba(19, 23, 27, 0.18);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow: 0 24px 50px rgba(19, 23, 27, 0.22);
+    }
+
+    .btn-secondary{
+      background: rgba(255,255,255,0.76);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover{
+      background:#fff;
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      background:transparent;
+      border-color: var(--line-strong);
+      color:var(--ink);
+    }
+
+    .btn-outline:hover{
+      background: rgba(255,255,255,0.8);
+    }
+
+    .hero{
+      padding: 48px 0 70px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-10% auto auto -10%;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(180,186,193,0.30), transparent 70%);
+      filter: blur(10px);
+      pointer-events:none;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-120px;
+      top:40px;
+      width:560px;
+      height:560px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(110,118,126,0.14), transparent 68%);
+      filter: blur(8px);
+      pointer-events:none;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap:40px;
+      align-items:stretch;
+      min-height: calc(100vh - 140px);
+    }
+
+    .hero-left{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:32px 0;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-kicker{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:24px;
+    }
+
+    .hero-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.8);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:0.92rem;
+      box-shadow: var(--shadow-1);
+    }
+
+    .hero-chip strong{
+      color:var(--ink);
+    }
+
+    .hero-title{
+      font-size: clamp(2.9rem, 7vw, 6rem);
+      line-height:0.94;
+      letter-spacing:-0.06em;
+      max-width: 11ch;
+      margin-bottom:22px;
+    }
+
+    .hero-title .accent{
+      display:block;
+      color: transparent;
+      background: linear-gradient(135deg, #1b1f23 10%, #5c6570 55%, #a7afb7 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+    }
+
+    .hero-desc{
+      max-width:700px;
+      font-size:1.08rem;
+      color:var(--muted);
+      margin-bottom:32px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:38px;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      max-width:800px;
+    }
+
+    .stat-card{
+      padding:20px 18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.72);
+      border-radius:20px;
+      box-shadow: var(--shadow-1);
+    }
+
+    .stat-card strong{
+      display:block;
+      font-size:1.7rem;
+      line-height:1;
+      margin-bottom:8px;
+      letter-spacing:-0.04em;
+    }
+
+    .stat-card span{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .hero-right{
+      display:grid;
+      grid-template-rows:auto 1fr auto;
+      gap:18px;
+      position:relative;
+      z-index:2;
+      padding:24px 0;
+    }
+
+    .hero-panel,
+    .glass-card{
+      border:1px solid rgba(255,255,255,0.5);
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.56));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-2);
+    }
+
+    .hero-logos{
+      padding:22px;
+    }
+
+    .hero-logos h3{
+      font-size:0.95rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+
+    .hero-logo-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .hero-logo-card{
+      background:#000000aa;
+      border:1px solid var(--line);
+      border-radius:20px; 
+      padding:18px;
+      min-height:122px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .hero-logo-card .logo-placeholder{
+      flex:1;
+      min-height:54px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px dashed rgba(17,19,21,0.16);
+      border-radius:14px;
+      margin-bottom:12px;
+      background:linear-gradient(180deg, #fcfcfc, #f4f6f7);
+      overflow:hidden;
+    }
+
+    .hero-logo-card .logo-placeholder img{
+      max-height:34px;
+      object-fit:contain;
+    }
+
+.hero-logo-card small{
+  color:#ffffff;
+  line-height:1.4;
+}
+
+  .hero-visual{
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(10,14,18,0.78), rgba(20,26,32,0.82)),
+    url("hero-maxpol.jpg") center center / cover no-repeat;
+  color: #fff;
+}
+
+    .hero-visual::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0.65));
+      opacity:0.45;
+    }
+
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      inset:auto -100px -100px auto;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
+      filter: blur(8px);
+    }
+
+    .visual-top{
+      position:relative;
+      z-index:2;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+      margin-bottom:28px;
+    }
+
+    .visual-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.08);
+      color:rgba(255,255,255,0.86);
+      font-size:0.86rem;
+    }
+
+    .visual-year{
+      font-size:0.88rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:rgba(255,255,255,0.72);
+    }
+
+    .visual-title{
+      position:relative;
+      z-index:2;
+      font-size: clamp(1.6rem, 2.4vw, 2.5rem);
+      line-height:1.02;
+      letter-spacing:-0.04em;
+      max-width:10ch;
+      margin-bottom:20px;
+    }
+
+    .visual-copy{
+      position:relative;
+      z-index:2;
+      color:rgba(255,255,255,0.78);
+      max-width:42ch;
+      margin-bottom:28px;
+    }
+
+    .visual-blocks{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+      margin-top:auto;
+    }
+
+    .visual-block{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.10);
+    }
+
+    .visual-block strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:1.05rem;
+    }
+
+    .visual-block span{
+      color:rgba(255,255,255,0.72);
+      font-size:0.92rem;
+    }
+
+    .hero-contact-box{
+      padding:20px 22px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      align-items:center;
+      gap:16px;
+    }
+
+    .hero-contact-box p{
+      color:var(--muted);
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:24px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:24px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:20px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.78));
+      box-shadow: var(--shadow-1);
+      overflow:hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-2);
+      border-color: rgba(17,19,21,0.16);
+    }
+
+    .card-body{
+      padding:28px;
+    }
+
+    .card-icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:18px;
+      font-size:1.15rem;
+      font-weight:700;
+      color:#fff;
+      background: linear-gradient(135deg, #171b20, #68717b);
+      box-shadow: 0 12px 24px rgba(17, 22, 27, 0.18);
+    }
+.offer-image{
+  width: 100%;
+  height: 180px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  border: 1px solid rgba(17,19,21,0.08);
+  box-shadow: 0 8px 24px rgba(8,10,12,0.06);
+}
+
+.offer-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .offer-image img{
+  transform: scale(1.04);
+}
+    .card h3{
+      font-size:1.35rem;
+      line-height:1.15;
+      letter-spacing:-0.03em;
+      margin-bottom:12px;
+    }
+
+    .card p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .list{
+      display:grid;
+      gap:10px;
+      list-style:none;
+    }
+
+    .list li{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:var(--ink);
+    }
+
+    .list li::before{
+      content:"";
+      width:8px;
+      height:8px;
+      margin-top:0.58em;
+      border-radius:50%;
+      background:linear-gradient(135deg, #24292e, #97a0a8);
+      flex:0 0 auto;
+    }
+
+    .about-layout{
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .about-text{
+      padding:34px;
+    }
+
+    .about-text h3{
+      font-size: clamp(1.9rem, 2.4vw, 2.8rem);
+      line-height:1.08;
+      letter-spacing:-0.04em;
+      margin-bottom:18px;
+      max-width:15ch;
+    }
+
+    .about-text p{
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
+    .about-notes{
+      display:grid;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .about-note{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:16px 18px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,0.7);
+    }
+
+    .about-note strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .about-side{
+      display:grid;
+      grid-template-rows: 1fr auto;
+      gap:18px;
+    }
+
+    .about-matrix{
+      padding:26px;
+      background:
+        linear-gradient(135deg, #101316, #242b31),
+        #111;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+      min-height:100%;
+    }
+
+    .about-matrix::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 34px 34px;
+      opacity:0.5;
+    }
+
+    .about-matrix h4,
+    .about-mini-card h4{
+      position:relative;
+      z-index:2;
+      font-size:1.15rem;
+      letter-spacing:-0.03em;
+      margin-bottom:16px;
+    }
+
+    .about-matrix-grid{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+
+    .about-matrix-item{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.10);
+      min-height:100px;
+    }
+
+    .about-matrix-item strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:1.05rem;
+    }
+
+    .about-matrix-item span{
+      color:rgba(255,255,255,0.76);
+      font-size:0.93rem;
+    }
+
+    .about-mini-card{
+      padding:22px 24px;
+    }
+
+    .offer-card-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .offer-badge{
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:0.82rem;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      background:rgba(255,255,255,0.7);
+    }
+
+    .products-wrap{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:28px;
+    }
+
+    .product-panel{
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow: var(--shadow-1);
+    }
+
+    .product-panel-head{
+      padding:30px 30px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .product-panel-head h3{
+      font-size:1.7rem;
+      line-height:1.05;
+      letter-spacing:-0.04em;
+    }
+
+    .product-panel-head span{
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:0.82rem;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:var(--muted);
+      background:var(--bg-soft);
+      border:1px solid var(--line);
+    }
+
+    .product-panel-body{
+      padding:28px 30px 32px;
+    }
+
+    .product-panel p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .service-steps{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:18px;
+    }
+
+    .step{
+      position:relative;
+      padding:26px 20px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8f9fa);
+      box-shadow: var(--shadow-1);
+    }
+
+    .step-num{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg, #161a1f, #68727c);
+      color:#fff;
+      font-weight:700;
+      margin-bottom:18px;
+      box-shadow: 0 10px 20px rgba(15,18,21,0.16);
+    }
+
+    .step h3{
+      font-size:1.1rem;
+      margin-bottom:10px;
+      letter-spacing:-0.03em;
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+.map-embed{
+  width: 100%;
+  min-height: 300px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.05);
+}
+
+.map-embed iframe{
+  width: 100%;
+  height: 300px;
+  display: block;
+  border: 0;
+}    .applications-grid .card{
+      min-height:100%;
+    }
+
+    .tech-layout{
+      display:grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap:26px;
+      align-items:stretch;
+    }
+
+    .tech-panel-dark{
+      padding:30px;
+      color:#fff;
+      background:
+        linear-gradient(145deg, #111418 0%, #252d34 100%);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .tech-panel-dark::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.12), transparent 22%),
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size:auto, 40px 40px, 40px 40px;
+      opacity:0.48;
+    }
+
+    .tech-panel-dark > *{
+      position:relative;
+      z-index:2;
+    }
+
+    .tech-panel-dark h3{
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height:1.05;
+      letter-spacing:-0.04em;
+      margin-bottom:16px;
+      max-width:10ch;
+    }
+
+    .tech-panel-dark p{
+      color:rgba(255,255,255,0.78);
+      max-width:48ch;
+      margin-bottom:24px;
+    }
+
+    .tech-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .tech-tag{
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.08);
+      color:rgba(255,255,255,0.9);
+      font-size:0.94rem;
+    }
+
+    .tech-cards{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:18px;
+    }
+
+    .tech-mini{
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,249,250,0.9));
+      box-shadow: var(--shadow-1);
+    }
+
+    .tech-mini strong{
+      display:block;
+      font-size:1.05rem;
+      margin-bottom:10px;
+    }
+
+    .tech-mini p{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .partners-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:18px;
+    }
+
+    .partner-card{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:116px;
+      padding:18px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,248,249,0.92));
+      box-shadow: var(--shadow-1);
+      position:relative;
+      overflow:hidden;
+      transition: var(--transition);
+    }
+
+    .partner-card:hover{
+      transform:translateY(-4px);
+      box-shadow: var(--shadow-2);
+    }
+
+    .partner-card span{
+      font-size:1.08rem;
+      font-weight:700;
+      letter-spacing:-0.03em;
+      color:var(--graphite);
+    }
+
+    .partner-card::before{
+      content:"";
+      position:absolute;
+      inset:auto auto -30px -30px;
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(149,157,165,0.18), transparent 68%);
+      pointer-events:none;
+    }
+
+    .realizations-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:22px;
+    }
+
+    .realization-card{
+      border:1px solid var(--line);
+      border-radius:26px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow: var(--shadow-1);
+      transition:var(--transition);
+    }
+
+    .realization-card:hover{
+      transform:translateY(-6px);
+      box-shadow: var(--shadow-2);
+    }
+
+    .realization-media{
+      aspect-ratio: 16 / 11;
+      background:
+        linear-gradient(135deg, rgba(18,22,26,0.95), rgba(55,61,67,0.88)),
+        #111;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .realization-media::before{
+      content:"Miejsce na zdjęcie realizacji";
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,0.74);
+      font-size:0.95rem;
+      letter-spacing:0.04em;
+      text-transform:uppercase;
+    }
+
+    .realization-media::after{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border:1px dashed rgba(255,255,255,0.18);
+      border-radius:20px;
+    }
+
+    .realization-content{
+      padding:24px;
+    }
+
+    .realization-content h3{
+      font-size:1.2rem;
+      line-height:1.12;
+      letter-spacing:-0.03em;
+      margin-bottom:10px;
+    }
+
+    .realization-content p{
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .meta-tag{
+      padding:7px 11px;
+      border-radius:999px;
+      background:var(--bg-soft);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:0.82rem;
+    }
+
+    .cert-layout{
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap:26px;
+    }
+
+    .cert-gallery{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:18px;
+    }
+
+    .cert-box{
+      min-height:220px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(247,248,249,0.9));
+      box-shadow: var(--shadow-1);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .cert-box-top{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      margin-bottom:14px;
+    }
+
+    .cert-box-top strong{
+      font-size:1rem;
+      letter-spacing:-0.02em;
+    }
+
+    .cert-box-top span{
+      color:var(--muted);
+      font-size:0.84rem;
+    }
+
+    .cert-placeholder{
+      flex:1;
+      border-radius:18px;
+      border:1px dashed rgba(17,19,21,0.18);
+      background:
+        linear-gradient(180deg, #fafbfb, #f1f4f5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:var(--muted);
+      padding:18px;
+    }
+
+    .cert-side{
+      display:grid;
+      gap:18px;
+    }
+
+    .reference-card{
+      padding:28px;
+    }
+
+    .reference-card h3{
+      font-size:1.3rem;
+      letter-spacing:-0.03em;
+      margin-bottom:12px;
+    }
+
+    .reference-card p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .logos-strip{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+
+    .logos-strip .strip-item{
+      min-height:74px;
+      border-radius:18px;
+      border:1px dashed rgba(17,19,21,0.16);
+      background:#f8f9fa;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      text-align:center;
+      padding:12px;
+      font-size:0.9rem;
+    }
+
+  .contact-layout{
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 26px;
+  align-items: stretch;
+}
+.contact-layout > *{
+  min-width: 0;
+}
+
+    .contact-panel-dark{
+      padding:32px;
+      color:#fff;
+      background:
+        linear-gradient(145deg, #111418 0%, #242b31 100%);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .contact-panel-dark::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,0.12), transparent 20%),
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size:auto, 36px 36px, 36px 36px;
+      opacity:0.45;
+    }
+
+    .contact-panel-dark > *{
+      position:relative;
+      z-index:2;
+    }
+
+    .contact-panel-dark h3{
+      font-size: clamp(2rem, 3vw, 3rem);
+      letter-spacing:-0.04em;
+      line-height:1.04;
+      margin-bottom:14px;
+      max-width:10ch;
+    }
+
+    .contact-panel-dark p{
+      color:rgba(255,255,255,0.78);
+      margin-bottom:22px;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:14px;
+      margin-bottom:28px;
+    }
+
+    .contact-item{
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.10);
+    }
+
+    .contact-item strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .contact-item span,
+    .contact-item a{
+      color:rgba(255,255,255,0.8);
+    }
+
+    .map-placeholder{
+      min-height:240px;
+      border-radius:22px;
+      border:1px dashed rgba(255,255,255,0.16);
+      background:rgba(255,255,255,0.05);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:rgba(255,255,255,0.7);
+      padding:20px;
+    }
+
+    .contact-form-card{
+      padding:30px;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,249,250,0.92));
+      box-shadow: var(--shadow-2);
+    }
+
+    .contact-form-card h3{
+      font-size:1.7rem;
+      line-height:1.08;
+      letter-spacing:-0.04em;
+      margin-bottom:10px;
+    }
+
+    .contact-form-card p{
+      color:var(--muted);
+      margin-bottom:20px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:16px;
+    }
+
+    .field{
+      display:grid;
+      gap:8px;
+    }
+
+    .field.full{
+      grid-column:1 / -1;
+    }
+
+    .field label{
+      font-size:0.92rem;
+      font-weight:600;
+      color:var(--ink);
+    }
+
+    .field input,
+    .field textarea{
+      width:100%;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:16px;
+      padding:15px 16px;
+      color:var(--ink);
+      transition: var(--transition);
+      outline:none;
+    }
+
+    .field input:focus,
+    .field textarea:focus{
+      border-color: rgba(17,19,21,0.24);
+      box-shadow: 0 0 0 4px rgba(17,19,21,0.05);
+    }
+
+    .field textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    .form-note{
+      margin-top:14px;
+      color:var(--muted-2);
+      font-size:0.9rem;
+    }
+
+    .cta-band{
+      padding:34px;
+      border-radius:32px;
+      background:
+        linear-gradient(145deg, #111418 0%, #232a30 100%);
+      color:#fff;
+      box-shadow: var(--shadow-3);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-band::before{
+      content:"";
+      position:absolute;
+      inset:auto -120px -120px auto;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%);
+    }
+
+    .cta-band-inner{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:22px;
+      align-items:center;
+    }
+
+    .cta-band h3{
+      font-size: clamp(1.8rem, 2.8vw, 3rem);
+      line-height:1.04;
+      letter-spacing:-0.04em;
+      margin-bottom:10px;
+    }
+
+    .cta-band p{
+      color:rgba(255,255,255,0.76);
+      max-width:60ch;
+    }
+
+    footer.site-footer{
+      padding:36px 0 28px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,0.54);
+      margin-top:34px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .footer-brand{
+      display:grid;
+      gap:14px;
+    }
+
+    .footer-logos{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .footer-copy{
+      color:var(--muted);
+      max-width:70ch;
+    }
+
+    .footer-links{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
+    }
+
+    .footer-col{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-col h4{
+      font-size:0.92rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+
+    .footer-col a,
+    .footer-col span{
+      color:var(--ink);
+    }
+
+    .footer-bottom{
+      margin-top:24px;
+      padding-top:20px;
+      border-top:1px solid var(--line);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:12px;
+      color:var(--muted);
+      font-size:0.92rem;
+    }
+
+    @media (max-width: 1200px){
+      .hero-grid,
+      .section-head,
+      .about-layout,
+      .tech-layout,
+      .cert-layout,
+      .contact-layout{
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left{
+        padding-top:18px;
+      }
+
+      .hero-right{
+        padding-top:0;
+      }
+
+      .service-steps{
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .partners-grid{
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .realizations-grid{
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .cta-band-inner{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 980px){
+      :root{
+        --header-h: 78px;
+      }
+
+      nav.main-nav{
+        position:fixed;
+        top:calc(var(--header-h) + 8px);
+        left:16px;
+        right:16px;
+        display:grid;
+        gap:8px;
+        padding:14px;
+        background:rgba(255,255,255,0.94);
+        border:1px solid var(--line);
+        border-radius:22px;
+        box-shadow: var(--shadow-2);
+        transform: translateY(-16px);
+        opacity:0;
+        pointer-events:none;
+        transition:0.25s ease;
+      }
+
+      nav.main-nav.open{
+        transform: translateY(0);
+        opacity:1;
+        pointer-events:auto;
+      }
+
+      nav.main-nav a{
+        padding:14px 14px;
+        background:#f8f9fa;
+      }
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .header-actions .btn{
+        display:none;
+      }
+
+      .hero-grid{
+        min-height:auto;
+      }
+
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .tech-cards,
+      .cert-gallery,
+      .form-grid,
+      .logos-strip,
+      .about-matrix-grid,
+      .visual-blocks{
+        grid-template-columns:1fr;
+      }
+
+      .service-steps{
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-logo-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid,
+      .footer-links{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .section{
+        padding: 84px 0;
+      }
+
+      .hero{
+        padding-top:24px;
+      }
+
+      .hero-title{
+        font-size: clamp(2.3rem, 12vw, 4rem);
+      }
+
+      .hero-desc{
+        font-size:1rem;
+      }
+
+      .service-steps,
+      .partners-grid,
+      .realizations-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-contact-box{
+        grid-template-columns:1fr;
+        text-align:left;
+      }
+
+      .card-body,
+      .about-text,
+      .contact-form-card,
+      .reference-card,
+      .tech-panel-dark,
+      .contact-panel-dark,
+      .product-panel-head,
+      .product-panel-body{
+        padding-left:22px;
+        padding-right:22px;
+      }
+
+      .container{
+        width:min(var(--max), calc(100% - 20px));
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .logo-box{
+        min-width:110px;
+        min-height:48px;
+        padding:8px 10px;
+      }
+
+      .brand-wrap{
+        gap:10px;
+      }
+
+      .brand-divider{
+        height:34px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#start" class="brand-wrap" aria-label="MAXPOL - przejdź do początku strony">
+        <div class="logo-box">
+          <img src="logo-maxpol-maciej-jankowiak.png" alt="Logo MAXPOL Maciej Jankowiak" style="scale: 1.6;">
+        </div>
+        <div class="brand-divider" aria-hidden="true"></div>
+        <div class="logo-box">
+          <img src="logo-maxpol-sp-zoo.png" alt="Logo MAXPOL Sp. z o.o." style="scale: 1.6;">
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#o-firmie">O firmie</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#produkty">Produkty</a>
+        <a href="#technologia">Technologia</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#certyfikaty">Certyfikaty</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#kontakt" class="btn btn-primary">Skontaktuj się</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="start">
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">
+            <div class="hero-chip"><strong>Od 1996 roku</strong> doświadczenie w branży</div>
+            <div class="hero-chip"><strong>Produkcja + wykonawstwo</strong> w jednym miejscu</div>
+          </div>
+
+          <h1 class="hero-title">
+            Konstrukcje budowlane,
+            <span class="accent">aluminium i stal</span>
+            dla inwestycji prywatnych i komercyjnych
+          </h1>
+
+          <p class="hero-desc">
+            MAXPOL to producent i wykonawca stolarki aluminiowej, stalowej oraz konstrukcji budowlanych.
+            Firma realizuje projekty dla klientów indywidualnych, biznesowych i inwestycyjnych — od produkcji,
+            przez doradztwo i przygotowanie techniczne, aż po montaż i wykonawstwo na miejscu inwestycji.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#oferta" class="btn btn-primary">Zobacz zakres działalności</a>
+            <a href="#kontakt" class="btn btn-secondary">Zapytaj o realizację</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>1996</strong>
+              <span>rok rozpoczęcia działalności i budowania doświadczenia</span>
+            </div>
+            <div class="stat-card">
+              <strong>B2B + B2C</strong>
+              <span>obsługa klientów indywidualnych, firm i inwestycji komercyjnych</span>
+            </div>
+            <div class="stat-card">
+              <strong>Projekt → montaż</strong>
+              <span>kompleksowe podejście do realizacji konstrukcji i zabudów</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right reveal">
+          <div class="hero-panel hero-logos">
+            <h3>Grupa MAXPOL</h3>
+            <div class="hero-logo-grid">
+              <div class="hero-logo-card">
+                <div class="logo-placeholder">
+                  <img src="logo-maxpol-maciej-jankowiak.png" alt="MAXPOL Maciej Jankowiak">
+                </div>
+                <small>PPHU MAXPOL Maciej Jankowiak</small>
+              </div>
+              <div class="hero-logo-card">
+                <div class="logo-placeholder">
+                  <img src="logo-maxpol-sp-zoo.png" alt="MAXPOL Sp. z o.o.">
+                </div>
+                <small>MAXPOL Sp. z o.o.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel hero-visual">
+            <div class="visual-top">
+              <span class="visual-badge">Produkcja • wykonawstwo • inwestycje</span>
+              <span class="visual-year">Od 1996</span>
+            </div>
+
+            <h2 class="visual-title">Solidne rozwiązania dla budownictwa i biznesu</h2>
+            <p class="visual-copy">
+              Firma łączy zaplecze techniczne, doświadczenie wykonawcze i praktyczne podejście do inwestycji.
+              Dzięki temu MAXPOL realizuje zarówno mniejsze zabudowy, jak i projekty o charakterze komercyjnym
+              oraz przemysłowym.
+            </p>
+
+            <div class="visual-blocks">
+              <div class="visual-block">
+                <strong>Stolarka aluminiowa</strong>
+                <span>fasady, okna, drzwi, ogrody zimowe, balustrady, zadaszenia</span>
+              </div>
+              <div class="visual-block">
+                <strong>Stolarka stalowa</strong>
+                <span>konstrukcje nośne, hale, bramy, kraty i elementy przemysłowe</span>
+              </div>
+              <div class="visual-block">
+                <strong>Realizacje komercyjne</strong>
+                <span>sklepy, lokale usługowe, galerie, hale i zabudowy biznesowe</span>
+              </div>
+              <div class="visual-block">
+                <strong>Kompleksowa obsługa</strong>
+                <span>projektowanie, doradztwo, produkcja, montaż i serwis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel hero-contact-box">
+            <div>
+              <strong>MAXPOL • Oborniki</strong>
+              <p>ul. Czarnkowska 75, 64-600 Oborniki • Pon–Pt 7:00–16:00</p>
+            </div>
+            <a href="tel:612965775" class="btn btn-outline">61 29 65 775</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="o-firmie">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">O firmie</div>
+            <h2>Produkcja i wykonawstwo w jednym modelu działania</h2>
+          </div>
+          <p>
+            MAXPOL działa jako producent oraz wykonawca konstrukcji budowlanych, stolarki aluminiowej
+            i stalowej. To połączenie zaplecza produkcyjnego z praktycznym doświadczeniem montażowym,
+            dzięki czemu firma może prowadzić realizacje sprawnie, rzeczowo i technicznie.
+          </p>
+        </div>
+
+        <div class="about-layout">
+          <div class="glass-card about-text reveal">
+            <h3>Firma dla klientów prywatnych, biznesowych i inwestycyjnych</h3>
+            <p>
+              Zakres działalności MAXPOL obejmuje zarówno produkcję elementów aluminiowych i stalowych,
+              jak i wykonawstwo obiektów, zabudów oraz konstrukcji stosowanych w budownictwie mieszkaniowym,
+              usługowym i komercyjnym.
+            </p>
+            <p>
+              Firma realizuje projekty dla domów, tarasów i ogrodów, ale również dla sklepów, lokali usługowych,
+              galerii, hal oraz budynków przeznaczonych do działalności gospodarczej. Dzięki temu może odpowiadać
+              na potrzeby różnych typów inwestorów i różnych skali realizacji.
+            </p>
+            <p>
+              Istotnym atutem MAXPOL jest połączenie wiedzy technicznej, nowoczesnego zaplecza maszynowego
+              i wieloletniego doświadczenia zdobywanego od 1996 roku. Przekłada się to na trwałość wykonania,
+              odporność materiałów i możliwość dopasowania rozwiązań do konkretnego projektu.
+            </p>
+
+            <div class="about-notes">
+              <div class="about-note">
+                <div class="card-icon">01</div>
+                <div>
+                  <strong>Jedna odpowiedzialność za cały proces</strong>
+                  <span>Od przygotowania technicznego i produkcji po montaż oraz finalne wykonanie.</span>
+                </div>
+              </div>
+              <div class="about-note">
+                <div class="card-icon">02</div>
+                <div>
+                  <strong>Doświadczenie w projektach komercyjnych</strong>
+                  <span>Realizacja sklepów, lokali usługowych, zabudów i konstrukcji dla biznesu.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-side">
+            <div class="glass-card about-matrix reveal">
+              <h4>Zakres działania</h4>
+              <div class="about-matrix-grid">
+                <div class="about-matrix-item">
+                  <strong>Klienci indywidualni</strong>
+                  <span>domy, ogrody, tarasy, zabudowy przydomowe i elementy wykończeniowe</span>
+                </div>
+                <div class="about-matrix-item">
+                  <strong>Biznes</strong>
+                  <span>sklepy, lokale usługowe, obiekty handlowe oraz inwestycje firmowe</span>
+                </div>
+                <div class="about-matrix-item">
+                  <strong>Budownictwo</strong>
+                  <span>konstrukcje budowlane, elementy nośne oraz zabudowy techniczne</span>
+                </div>
+                <div class="about-matrix-item">
+                  <strong>Kompleksowa realizacja</strong>
+                  <span>doradztwo, projektowanie, produkcja, montaż i wsparcie serwisowe</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card about-mini-card reveal">
+              <h4>Najważniejsze atuty</h4>
+              <ul class="list">
+                <li>doświadczenie od 1996 roku</li>
+                <li>nowoczesne zaplecze techniczne</li>
+                <li>trwałość wykonania i odporność na korozję</li>
+                <li>energooszczędność i estetyka rozwiązań</li>
+                <li>możliwość personalizacji projektów</li>
+                <li>obsługa klientów indywidualnych i firm</li>
+                <li>realizacja inwestycji komercyjnych</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="oferta">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Oferta i zakres działalności</div>
+            <h2>Obszary, w których MAXPOL realnie pracuje</h2>
+          </div>
+          <p>
+            Firma działa na styku produkcji, wykonawstwa i inwestycji budowlanych. Oznacza to nie tylko
+            dostarczanie elementów, ale także praktyczne wdrażanie ich w gotowych obiektach i zabudowach.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal">
+            <div class="card-body">
+                  <div class="offer-image">
+  <img src="oferta-produkcja.jpg" alt="Stolarka aluminiowa i konstrukcje budowlane">
+</div>
+              <div class="offer-card-top">
+                <div class="card-icon">A</div>
+                <span class="offer-badge">Produkcja</span>
+              </div>
+              <h3>Stolarka aluminiowa i stalowa oraz konstrukcje budowlane</h3>
+              <p>
+                MAXPOL wykonuje elementy przeznaczone do zastosowań prywatnych, usługowych i inwestycyjnych.
+                Produkcja obejmuje rozwiązania estetyczne, trwałe i przygotowane do wieloletniej eksploatacji.
+              </p>
+              <ul class="list">
+                <li>stolarka aluminiowa</li>
+                <li>stolarka stalowa</li>
+                <li>konstrukcje stalowe</li>
+                <li>elementy przeszklone</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-body">
+              <div class="offer-image">
+  <img src="oferta-wykonawstwo.jpg" alt="Realizacja inwestycji i montaż">
+</div>
+              <div class="offer-card-top">
+                <div class="card-icon">B</div>
+                <span class="offer-badge">Wykonawstwo</span>
+              </div>
+              <h3>Realizacja inwestycji, zabudów i montaży</h3>
+              <p>
+                Firma obsługuje nie tylko etap produkcyjny, ale także wdrożenie konstrukcji w miejscu inwestycji.
+                To ważne w projektach wymagających spójności technicznej i odpowiedzialnego montażu.
+              </p>
+              <ul class="list">
+                <li>montaż konstrukcji</li>
+                <li>realizacja inwestycji budowlanych</li>
+                <li>wykonanie obiektów i zabudów</li>
+                <li>koordynacja prac wykonawczych</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-body">
+              <div class="offer-image">
+  <img src="oferta-komercja.jpg" alt="Budowa i zabudowa sklepów">
+</div>
+              <div class="offer-card-top">
+                <div class="card-icon">C</div>
+                <span class="offer-badge">Komercja</span>
+              </div>
+              <h3>Budowa i zabudowa sklepów oraz obiektów handlowych</h3>
+              <p>
+                MAXPOL realizuje także projekty dla sektora biznesowego. Obejmuje to elementy konstrukcyjne
+                oraz zabudowy przeznaczone do funkcjonowania sklepów, lokali usługowych i innych przestrzeni komercyjnych.
+              </p>
+              <ul class="list">
+                <li>budowa i zabudowa sklepów</li>
+                <li>realizacja obiektów handlowych</li>
+                <li>konstrukcje dla lokali usługowych</li>
+                <li>elementy dla inwestycji biznesowych</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-body">
+              <div class="offer-image">
+  <img src="oferta-b2b-b2c.jpg" alt="Realizacje dla klientów indywidualnych i firm">
+</div>
+              <div class="offer-card-top">
+                <div class="card-icon">D</div>
+                <span class="offer-badge">B2B / B2C</span>
+              </div>
+              <h3>Praca zarówno dla prywatnych inwestorów, jak i firm</h3>
+              <p>
+                Firma współpracuje z klientami indywidualnymi oraz z podmiotami realizującymi inwestycje na potrzeby biznesu.
+                Taki model działania pozwala elastycznie dopasować rozwiązania do skali projektu.
+              </p>
+              <ul class="list">
+                <li>domy, ogrody, tarasy</li>
+                <li>sklepy i lokale usługowe</li>
+                <li>galerie i hale</li>
+                <li>budynki komercyjne i inwestycyjne</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="produkty">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Produkty</div>
+            <h2>Dwie główne grupy rozwiązań: aluminium i stal</h2>
+          </div>
+          <p>
+            Produkty zostały podzielone na dwa główne obszary materiałowe. Taki układ ułatwia szybkie
+            zorientowanie się w zakresie oferty i pokazuje szerokość kompetencji firmy.
+          </p>
+        </div>
+
+        <div class="products-wrap">
+          <article class="product-panel reveal">
+            <div class="product-panel-head">
+              <h3>Aluminium</h3>
+              <span>Estetyka • lekkość • nowoczesność</span>
+            </div>
+            <div class="product-panel-body">
+              <p>
+                Rozwiązania aluminiowe sprawdzają się zarówno w nowoczesnym budownictwie mieszkaniowym,
+                jak i w realizacjach usługowych oraz komercyjnych. Łączą trwałość z nowoczesnym wyglądem
+                i szerokimi możliwościami dopasowania.
+              </p>
+              <ul class="list">
+                <li>fasady</li>
+                <li>okna</li>
+                <li>drzwi</li>
+                <li>ogrody zimowe</li>
+                <li>balustrady</li>
+                <li>zadaszenia</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="product-panel reveal">
+            <div class="product-panel-head">
+              <h3>Stal</h3>
+              <span>Wytrzymałość • nośność • zastosowanie przemysłowe</span>
+            </div>
+            <div class="product-panel-body">
+              <p>
+                Rozwiązania stalowe są przeznaczone do zastosowań wymagających solidności, stabilności
+                i trwałości. To grupa produktów szczególnie istotna przy konstrukcjach budowlanych i przemysłowych.
+              </p>
+              <ul class="list">
+                <li>konstrukcje nośne</li>
+                <li>hale</li>
+                <li>bramy</li>
+                <li>kraty</li>
+                <li>elementy przemysłowe</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="uslugi">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Usługi</div>
+            <h2>Pełny proces realizacji — od koncepcji do montażu</h2>
+          </div>
+          <p>
+            Zakres usług nie kończy się na samym wykonaniu elementów. MAXPOL prowadzi klientów przez kolejne etapy realizacji,
+            zapewniając wsparcie techniczne i wykonawcze w całym procesie.
+          </p>
+        </div>
+
+        <div class="service-steps">
+          <article class="step reveal">
+            <div class="step-num">01</div>
+            <h3>Projektowanie</h3>
+            <p>Przygotowanie rozwiązań dopasowanych do założeń obiektu, funkcji i wymagań technicznych.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-num">02</div>
+            <h3>Doradztwo techniczne</h3>
+            <p>Dobór odpowiednich konstrukcji, materiałów i sposobu wykonania w zależności od inwestycji.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-num">03</div>
+            <h3>Produkcja</h3>
+            <p>Wykonanie elementów w oparciu o nowoczesne zaplecze technologiczne i standardy jakościowe.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-num">04</div>
+            <h3>Montaż</h3>
+            <p>Praktyczne wdrożenie rozwiązania na inwestycji z dbałością o trwałość, bezpieczeństwo i estetykę.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-num">05</div>
+            <h3>Serwis</h3>
+            <p>Wsparcie po realizacji oraz utrzymanie sprawności i jakości wykonanych elementów.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="zastosowania">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Zastosowania</div>
+            <h2>Gdzie znajdują zastosowanie rozwiązania MAXPOL</h2>
+          </div>
+          <p>
+            Firma obsługuje zarówno projekty prywatne, jak i obiekty przeznaczone do działalności handlowej,
+            usługowej lub przemysłowej. To ważne, bo pokazuje szerokość praktycznych zastosowań oferty.
+          </p>
+        </div>
+
+        <div class="grid-4 applications-grid">
+          <article class="card reveal">
+            <div class="card-body">
+              <div class="card-icon">D</div>
+              <h3>Domy i zabudowy prywatne</h3>
+              <p>Rozwiązania dla budynków mieszkalnych, wejść, przeszkleń i nowoczesnych stref przydomowych.</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-body">
+              <div class="card-icon">T</div>
+              <h3>Tarasy i ogrody</h3>
+              <p>Balustrady, zadaszenia, ogrody zimowe i elementy poprawiające funkcjonalność stref zewnętrznych.</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-body">
+              <div class="card-icon">S</div>
+              <h3>Sklepy i lokale usługowe</h3>
+              <p>Budowa i zabudowa przestrzeni handlowych, usługowych oraz elementów ekspozycyjnych i użytkowych.</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-body">
+              <div class="card-icon">I</div>
+              <h3>Hale i inwestycje komercyjne</h3>
+              <p>Konstrukcje dla obiektów o większej skali i dla projektów realizowanych w modelu biznesowym.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="technologia">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Technologia</div>
+            <h2>Nowoczesne zaplecze techniczne i praktyczne procesy obróbki</h2>
+          </div>
+          <p>
+            Firma korzysta z nowoczesnego parku maszynowego, co przekłada się na precyzję wykonania,
+            powtarzalność i możliwość sprawnej realizacji różnych typów elementów konstrukcyjnych i stolarki.
+          </p>
+        </div>
+
+        <div class="tech-layout">
+          <div class="glass-card tech-panel-dark reveal">
+            <h3>Park maszynowy dopasowany do realnej produkcji</h3>
+            <p>
+              Technologia w MAXPOL wspiera zarówno dokładność wykonania, jak i elastyczność w dopasowaniu
+              rozwiązań do projektu. To szczególnie istotne przy realizacjach, które wymagają indywidualnego podejścia
+              oraz wysokiej trwałości materiałowej.
+            </p>
+
+            <div class="tech-tags">
+              <span class="tech-tag">cięcie</span>
+              <span class="tech-tag">frezowanie</span>
+              <span class="tech-tag">gięcie</span>
+              <span class="tech-tag">spawanie</span>
+            </div>
+          </div>
+
+          <div class="tech-cards">
+            <div class="tech-mini reveal">
+              <strong>Cięcie</strong>
+              <p>Precyzyjne przygotowanie elementów konstrukcyjnych i stolarki pod dalszą obróbkę oraz montaż.</p>
+            </div>
+            <div class="tech-mini reveal">
+              <strong>Frezowanie</strong>
+              <p>Dokładne opracowanie detali technicznych potrzebnych do poprawnego spasowania i wykończenia.</p>
+            </div>
+            <div class="tech-mini reveal">
+              <strong>Gięcie</strong>
+              <p>Formowanie elementów zgodnie z wymaganiami konstrukcyjnymi oraz założeniami projektowymi.</p>
+            </div>
+            <div class="tech-mini reveal">
+              <strong>Spawanie</strong>
+              <p>Solidne łączenie konstrukcji stalowych i komponentów wymagających trwałości eksploatacyjnej.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="partnerzy">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Partnerzy</div>
+            <h2>Firmy i marki, z którymi MAXPOL współpracuje</h2>
+          </div>
+          <p>
+            Współpraca z partnerami branżowymi wspiera jakość realizacji oraz dostęp do sprawdzonych rozwiązań
+            materiałowych i systemowych.
+          </p>
+        </div>
+
+        <div class="partners-grid">
+          <div class="partner-card reveal"><img src="metalpol-logo.gif" alt=""></div>
+          <div class="partner-card reveal"><img src="morad.jpg" alt=""></div>
+          <div class="partner-card reveal"><img src="alumglass.jpg" alt=""></div>
+          <div class="partner-card reveal"><img src="glastech.jpg" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="realizacje">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Realizacje</div>
+            <h2>Wybrane realizacje</h2>
+          </div>
+          <p>
+            MAXPOL realizuje projekty dla klientów indywidualnych, firm oraz inwestorów komercyjnych. 
+Poniżej prezentujemy przykładowe obszary realizacji obejmujące stolarkę aluminiową, konstrukcje stalowe 
+oraz zabudowy dla obiektów handlowych i usługowych.
+          </p>
+        </div>
+
+        <div class="realizations-grid">
+          <article class="realization-card reveal">
+            <div class="realization-media"></div>
+            <div class="realization-content">
+              <h3>Przykładowa realizacja aluminiowa</h3>
+              <p>
+                Miejsce na opis realizacji, zakres prac, lokalizację oraz zastosowane rozwiązania.
+              </p>
+              <div class="meta-row">
+                <span class="meta-tag">fasady</span>
+                <span class="meta-tag">okna</span>
+                <span class="meta-tag">montaż</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="realization-card reveal">
+            <div class="realization-media"></div>
+            <div class="realization-content">
+              <h3>Przykładowa realizacja komercyjna</h3>
+              <p>
+                Miejsce na zdjęcie sklepu, lokalu usługowego lub obiektu handlowego wykonanego przez firmę.
+              </p>
+              <div class="meta-row">
+                <span class="meta-tag">sklepy</span>
+                <span class="meta-tag">B2B</span>
+                <span class="meta-tag">zabudowy</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="realization-card reveal">
+            <div class="realization-media"></div>
+            <div class="realization-content">
+              <h3>Przykładowa konstrukcja stalowa</h3>
+              <p>
+                Miejsce na prezentację projektu konstrukcyjnego dla hali, obiektu usługowego lub inwestycji przemysłowej.
+              </p>
+              <div class="meta-row">
+                <span class="meta-tag">stal</span>
+                <span class="meta-tag">hale</span>
+                <span class="meta-tag">konstrukcje</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="certyfikaty">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Certyfikaty i referencje</div>
+            <h2>Certyfikaty i referencje</h2>
+          </div>
+          <p>
+            Jakość realizacji MAXPOL potwierdzają certyfikaty, dokumenty branżowe oraz materiały referencyjne 
+związane ze współpracą przy projektach dla klientów prywatnych i biznesowych.
+          </p>
+        </div>
+
+        <div class="cert-layout">
+          <div class="cert-gallery">
+            <div class="cert-box reveal">
+              <div class="cert-box-top">
+                <strong>Certyfikat</strong>
+                <span>Firma godna zaufania</span>
+              </div>
+              <div class="cert-placeholder"><img src="CERTYFIKAT_01.png" alt=""></div>
+            </div>
+
+            <div class="cert-box reveal">
+              <div class="cert-box-top">
+                <strong>List referencyjny</strong>
+                <span>Pepco</span>
+              </div>
+              <div class="cert-placeholder"><img src="pepco.webp" alt=""></div>
+            </div>
+
+            <div class="cert-box reveal">
+              <div class="cert-box-top">
+                <strong>Rekomendacja</strong>
+                <span>Morag</span>
+              </div>
+              <div class="cert-placeholder"><img src="morag.webp" alt=""></div>
+            </div>
+
+            <div class="cert-box reveal">
+              <div class="cert-box-top">
+                <strong>Referencje</strong>
+                <span>Agat</span>
+              </div>
+              <div class="cert-placeholder"><img src="agat.webp" alt=""></div>
+            </div>
+          </div>
+
+          <div class="cert-side">
+            <div class="card reference-card reveal">
+             <h3>Jakość potwierdzona dokumentami i współpracą</h3>
+<p>
+  MAXPOL współpracuje z partnerami branżowymi i realizuje projekty wymagające trwałości, precyzji 
+  oraz odpowiedzialnego wykonania. Certyfikaty i referencje stanowią potwierdzenie jakości stosowanych rozwiązań.
+</p>
+<ul class="list">
+  <li>certyfikaty i dokumenty branżowe</li>
+  <li>referencje od partnerów i inwestorów</li>
+  <li>potwierdzenie jakości wykonania</li>
+  <li>materiały związane ze współpracą projektową</li>
+</ul>
+            </div>
+
+            <div class="card reference-card reveal">
+              <h3>Logotypy partnerów / inwestorów</h3>
+          <p>
+  Wybrane współprace i materiały referencyjne pokazują zakres działalności firmy oraz udział MAXPOL 
+  w realizacjach dla sektora prywatnego, usługowego i komercyjnego.
+</p>
+              <div class="logos-strip">
+                <div class="strip-item">Partner / inwestor</div>
+                <div class="strip-item">Partner / inwestor</div>
+                <div class="strip-item">Partner / inwestor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div class="cta-band-inner">
+            <div>
+              <h3>Potrzebujesz wykonawcy lub producenta do inwestycji?</h3>
+              <p>
+                Jeśli szukasz firmy, która łączy doświadczenie, zaplecze techniczne i praktyczne wykonawstwo,
+                skontaktuj się z MAXPOL i opowiedz o swojej realizacji.
+              </p>
+            </div>
+            <a href="#kontakt" class="btn btn-secondary">Przejdź do kontaktu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Kontakt</div>
+            <h2>Porozmawiajmy o projekcie, zabudowie lub inwestycji</h2>
+          </div>
+          <p>
+            Zapraszamy do kontaktu w sprawie realizacji, wyceny lub współpracy. 
+Obsługujemy zarówno klientów indywidualnych, jak i inwestycje dla biznesu.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="glass-card contact-panel-dark reveal">
+            <h3>Dane firmy</h3>
+            <p>
+              MAXPOL realizuje projekty dla klientów indywidualnych i biznesowych. Zapraszamy do kontaktu telefonicznego
+              lub mailowego w godzinach pracy firmy.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Nazwa</strong>
+                <span>PPHU MAXPOL Maciej Jankowiak<br>MAXPOL Sp. z o.o.</span>
+              </div>
+
+              <div class="contact-item">
+                <strong>Adres</strong>
+                <span>ul. Czarnkowska 75<br>64-600 Oborniki</span>
+              </div>
+
+              <div class="contact-item">
+                <strong>Telefon</strong>
+                <a href="tel:612965775">61 29 65 775</a>
+              </div>
+
+              <div class="contact-item">
+                <strong>E-mail</strong>
+                <a href="mailto:maxpol@op.pl">maxpol@op.pl</a>
+              </div>
+
+              <div class="contact-item">
+                <strong>Godziny pracy</strong>
+                <span>Pon–Pt 7:00–16:00</span>
+              </div>
+            </div>
+
+<div class="map-embed">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.347411982486!2d16.802037712287856!3d52.65370222620572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47046cccf55e9c97%3A0x6a6652a45e8f5d4d!2sMAXPOL%20Maciej%20Jankowiak.%20Producent%20stolarki%20aluminiowej!5e0!3m2!1spl!2spl!4v1775127781106!5m2!1spl!2spl"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+<div style="margin-top:14px;">
+  <a 
+    href="https://maps.app.goo.gl/n7rhoZenLWpYSLcm9"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-secondary">
+    Otwórz nawigację
+  </a>
+</div>
+          </div>
+
+          <div class="contact-form-card reveal">
+           <h3>Napisz do nas</h3>
+<p>
+  Opisz krótko zakres inwestycji lub rodzaj potrzebnych prac. Skontaktujemy się, aby omówić szczegóły realizacji.
+</p>
+
+            <form>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Imię i nazwisko / firma</label>
+                  <input type="text" id="name" name="name" placeholder="Np. Jan Kowalski / Nazwa firmy">
+                </div>
+
+                <div class="field">
+                  <label for="phone">Telefon</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Np. 600 000 000">
+                </div>
+
+                <div class="field">
+                  <label for="email">Adres e-mail</label>
+                  <input type="email" id="email" name="email" placeholder="Np. kontakt@firma.pl">
+                </div>
+
+                <div class="field">
+                  <label for="topic">Temat</label>
+                  <input type="text" id="topic" name="topic" placeholder="Np. zapytanie o konstrukcję stalową">
+                </div>
+
+                <div class="field full">
+                  <label for="message">Wiadomość</label>
+                  <textarea id="message" name="message" placeholder="Opisz zakres realizacji, lokalizację oraz czego potrzebujesz."></textarea>
+                </div>
+
+                <div class="field full">
+                  <button type="submit" class="btn btn-primary">Wyślij zapytanie</button>
+                </div>
+              </div>
+            </form>
+
+            <p class="form-note">
+             Administratorem danych przesłanych przez formularz jest MAXPOL. 
+Dane są wykorzystywane wyłącznie w celu kontaktu i obsługi zapytania.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logos">
+            <div class="logo-box">
+              <img src="logo-maxpol-maciej-jankowiak.png" alt="Logo MAXPOL Maciej Jankowiak">
+            </div>
+            <div class="logo-box">
+              <img src="logo-maxpol-sp-zoo.png" alt="Logo MAXPOL Sp. z o.o.">
+            </div>
+          </div>
+
+          <p class="footer-copy">
+            MAXPOL to producent i wykonawca konstrukcji budowlanych, stolarki aluminiowej i stalowej.
+            Firma działa od 1996 roku, realizując projekty dla klientów prywatnych, biznesowych i inwestycyjnych.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Nawigacja</h4>
+            <a href="#o-firmie">O firmie</a>
+            <a href="#oferta">Oferta</a>
+            <a href="#produkty">Produkty</a>
+            <a href="#technologia">Technologia</a>
+            <a href="#realizacje">Realizacje</a>
+            <a href="#certyfikaty">Certyfikaty</a>
+            <a href="#kontakt">Kontakt</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Dane kontaktowe</h4>
+            <span>ul. Czarnkowska 75, 64-600 Oborniki</span>
+            <a href="tel:612965775">61 29 65 775</a>
+            <a href="mailto:maxpol@op.pl">maxpol@op.pl</a>
+            <span>Pon–Pt 7:00–16:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© MAXPOL — wszystkie prawa zastrzeżone</span>
+        <span>Producent stolarki aluminiowej i stalowej oraz wykonawca konstrukcji budowlanych</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.14
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if(menuToggle && mainNav){
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        mainNav.classList.toggle('open');
+      });
+
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('active');
+          mainNav.classList.remove('open');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        const clickedInsideNav = mainNav.contains(e.target);
+        const clickedToggle = menuToggle.contains(e.target);
+
+        if(!clickedInsideNav && !clickedToggle){
+          menuToggle.classList.remove('active');
+          mainNav.classList.remove('open');
+        }
+      });
+    }
+
+    const form = document.querySelector('form');
+    if(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Formularz jest obecnie przykładowy. Aby uruchomić wysyłkę, podłącz go do Formspree lub własnego systemu kontaktowego.');
+      });
+    }
+  </script>
+</body>
+</html>
