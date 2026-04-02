@@ -1154,7 +1154,7 @@
 }
 .stalo {
   background: 
-    linear-gradient(rgba(161, 161, 161, 0.402), rgba(151, 151, 151, 0.551)),
+    linear-gradient(rgba(163, 163, 163, 0.402), rgba(154, 154, 154, 0.551)),
     url("stal.jpg");
   background-size: cover;
   background-position: center;
@@ -1660,9 +1660,12 @@
         display:none;
       }
 
-      .hero-grid{
-        min-height:auto;
-      }
+     .hero-grid{
+  display:grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap:28px;
+  align-items:stretch;
+}
 
       .hero-stats{
         grid-template-columns:1fr;
@@ -1814,8 +1817,7 @@
 
           <p class="hero-desc">
             MAXPOL to producent i wykonawca stolarki aluminiowej, stalowej oraz konstrukcji budowlanych.
-            Firma realizuje projekty dla klientów indywidualnych, biznesowych i inwestycyjnych — od produkcji,
-            przez doradztwo i przygotowanie techniczne, aż po montaż i wykonawstwo na miejscu inwestycji.
+            Realizuje projekty dla klientów prywatnych, sklepów, lokali usługowych, hal oraz inwestycji komercyjnych.
           </p>
 
           <div class="hero-actions">
